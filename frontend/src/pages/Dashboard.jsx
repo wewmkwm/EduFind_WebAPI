@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BookOpen, Bookmark, User } from 'lucide-react'; // 使用 Lucide 图标库
+import { BookOpen, Bookmark, User } from 'lucide-react';
 
 const Dashboard = () => {
   const navigate = useNavigate();
