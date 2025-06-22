@@ -1,7 +1,7 @@
 // src/pages/Login.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext"; // 引入上下文
+import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +10,7 @@ const Login = () => {
   });
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { login } = useAuth(); // 使用 Context 中的 login 方法
+  const { login } = useAuth();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -32,7 +32,7 @@ const Login = () => {
       if (!res.ok) {
         setError(data.error || "Login failed");
       } else {
-        login(data.user); // 通过 context 登录（会设置 localStorage 并更新 isLoggedIn）
+        login(data.user);
         alert("Login successful!");
         navigate("/dashboard");
       }
